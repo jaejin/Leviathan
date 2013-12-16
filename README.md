@@ -10,7 +10,7 @@
 
 Leviathan aims to be to Clojure what Xcode is to ObjC and IntelliJ is to Java.
 
-Some permanent project goals:
+#### Project goals
 
 - Lightweight and fast
 - Minimalist UI
@@ -19,9 +19,9 @@ Some permanent project goals:
 - User-customizable refactoring functions
 - Completely customizable key bindings
 
-#### Free and Open Source
+#### Current status
 
-Leviathan was originally intended to be a commercial IDE. But together, we can make this an even higher quality app.
+Mostly usable, but doesn't have many refactoring functions yet. Some internal refactoring needs to be done to make it easier to do. See the related github-issues.
 
 #### Screenshot (version 0.0)
 
