@@ -37,6 +37,7 @@
     self.outputPipe = nil;
 }
 
+
 - (void) open {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillTerminate:) name:NSApplicationWillTerminateNotification object:nil];
     
@@ -55,11 +56,11 @@
         NSString* str = [[NSString alloc] initWithData:[handle availableData] encoding:NSUTF8StringEncoding];
         [buffer appendString:str];
         
-        NSUInteger endPos = [buffer rangeOfString:@" on host"].location;
+        NSUInteger endPos = [buffer rangeOfString:@"REPL"].location;
         
         if (endPos != NSNotFound) {
             NSUInteger startPos = NSMaxRange([buffer rangeOfString:@"on port "]);
-            NSString* portString = [buffer substringWithRange:NSMakeRange(startPos, endPos - startPos)];
+            NSString* portString = [buffer substringWithRange:NSMakeRange(startPos, [buffer length] - startPos)];
             [_self.outputPipe fileHandleForReading].readabilityHandler = nil;
             _self.ready([portString integerValue]);
             _self.ready = nil;
@@ -67,7 +68,7 @@
     };
     
     self.task.currentDirectoryPath = [self.baseURL path];
-    self.task.launchPath = @"/Users/sdegutis/bin/lein";
+    self.task.launchPath = @"/Users/skplanet/TOOL/bin/lein";
     self.task.arguments = @[@"repl"];
     [self.task launch];
 }
