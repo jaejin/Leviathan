@@ -80,3 +80,6 @@
    "doto"
    "case"
    "list"])
+
+(def lein-path
+  ["/Users/skplanet/TOOL/bin/lein"])

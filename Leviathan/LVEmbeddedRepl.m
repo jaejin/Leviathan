@@ -7,6 +7,7 @@
 //
 
 #import "LVEmbeddedRepl.h"
+#import "LVSettings.h"
 
 @interface LVEmbeddedRepl ()
 
@@ -67,8 +68,11 @@
         }
     };
     
+    NSArray* keys = [[LVSettings sharedSettings].cachedSettings objectForKey:@"lein-path"];
+    
+    
     self.task.currentDirectoryPath = [self.baseURL path];
-    self.task.launchPath = @"/Users/skplanet/TOOL/bin/lein";
+    self.task.launchPath = [keys objectAtIndex:0];
     self.task.arguments = @[@"repl"];
     [self.task launch];
 }

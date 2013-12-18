@@ -45,7 +45,7 @@ LV_DEFINE(LVSettingsReloadedNotification);
 - (void) recacheSettings {
     NSDictionary* rawSettings = LVParseConfigWithDefs([LVSettings settingsFileURL]);
     NSMutableDictionary* sanitizedSettings = [NSMutableDictionary dictionary];
-    NSArray* knownSettingKeys = @[@"indent-like-functions", @"modal-key-bindings", @"key-bindings"];
+    NSArray* knownSettingKeys = @[@"indent-like-functions", @"modal-key-bindings", @"key-bindings", @"lein-path"];
     
     for (NSString* key in knownSettingKeys) {
         id val = [[rawSettings objectForKey:key] toObjC];
