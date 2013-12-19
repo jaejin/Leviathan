@@ -82,4 +82,4 @@
    "list"])
 
 (def lein-path
-  ["/Users/skplanet/TOOL/bin/lein"])
+  ["~/bin/lein"])
