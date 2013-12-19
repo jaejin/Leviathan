@@ -68,7 +68,7 @@
         }
     };
     
-    NSString* leinpath = [[[LVSettings sharedSettings].cachedSettings objectForKey:@"lein-path"] objectAtIndex:0];
+    NSString* leinpath = [[[[LVSettings sharedSettings].cachedSettings objectForKey:@"lein-path"] objectAtIndex:0] stringByStandardizingPath];
     
     self.task.currentDirectoryPath = [self.baseURL path];
     self.task.launchPath = leinpath;
