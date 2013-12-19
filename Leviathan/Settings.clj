@@ -81,5 +81,6 @@
    "case"
    "list"])
 
-(def lein-path
-  ["~/bin/lein"])
+(def lein-path 
+    ;; it loaed arrays
+    "/Users/skplanet/TOOL/bin/lein" )
