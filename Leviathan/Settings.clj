@@ -83,4 +83,4 @@
 
 (def lein-path 
     ;; it loaed arrays
-    "/Users/skplanet/TOOL/bin/lein" )
+    "~/bin/lein" )
